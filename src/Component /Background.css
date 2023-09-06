@@ -1,0 +1,35 @@
+
+.background-container{
+  
+    background-image: url('/src/Component /Backgroud.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 61vh;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+}
+
+h1 {
+   
+    font-size: 50px;
+    color: #333; 
+    padding: 20px;
+    text-align: left;
+    padding: 39px;
+    padding-top: 230px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 43px;
+    text-shadow: 3px 6px 13px;
+    line-height: 70px;
+
+    
+}
+h1:hover{
+    font-size: 60px;
+    transition-duration: 500ms;
+    line-height: 80px;
+    
+}

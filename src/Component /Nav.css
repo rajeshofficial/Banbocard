@@ -1,0 +1,29 @@
+/* CSS for the navigation menu */
+nav {
+    background-color: #333;
+    padding: 21px 20px; /* Increased padding for spacing */
+    overflow: hidden; /* Clear floats */
+    font-size: 18px;
+    
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 18px; 
+  }
+  nav a:hover{
+    color : #D2DE32
+  }
+  
+  nav a:last-child {
+    margin-right: 0; /* Remove margin for the last link (Login) */
+  }
+  
+  .login-link {
+    float: right; /* Float the login link to the right */
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px; /* Add some spacing between the login link and other links */
+  }
+  
