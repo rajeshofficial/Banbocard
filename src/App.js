@@ -1,12 +1,12 @@
 
 import './App.css';
-import './Component /Card';
-import ImageSlider from './Component /Slider';
 import Card from './Component /Card';
 import Nav from './Component /Nav';
 import Background from './Component /Background';
-// import InfoSlide from './Component /InfoSlide';
-import citiesSlider from './Component /InfoSlide';
+import Imagebox from './Component /Imagebox';
+import Features from './Component /Features';
+import Form from './Component /Form';
+
 
 
 
@@ -18,9 +18,10 @@ function App() {
   {/* <ImageSlider /> */}
      {/* <Card/> */}
    {/* <InfoSlide/> */}
-   <citiesSlider/>
- 
- 
+   <Imagebox/>
+   <Features/>
+   <Form/>
+   <Card/>
 
 </div>
   );

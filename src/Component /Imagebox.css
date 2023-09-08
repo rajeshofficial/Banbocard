@@ -1,0 +1,36 @@
+.row
+{
+    align-items: center;
+    float: left;
+    width: 40%;
+}
+.imagebox{
+    padding-top: 25px;
+    width: 80%;
+    margin: 13px;
+    margin-top: 15px;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    margin-left: 36px;
+    border-radius: 40px;
+}
+.description-box{
+    padding-top: 12%;
+    padding-left: 50%;
+    width: 90%;
+    height: inherit;
+}
+.box-title{
+    font-size: 30px;
+}
+.box-description{
+    font-size: 15px;
+}
+.Main1:after
+{
+    content: "";
+    display: table;
+    clear: both;
+}  
+
+

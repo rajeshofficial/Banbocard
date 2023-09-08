@@ -1,0 +1,28 @@
+.C1
+{
+    float: left;
+    width: 50% ;
+}
+.X1:after
+{
+    content: "";
+    display: table;
+    clear: both;
+}  
+.card
+{
+    width: 20rem;
+    height: 50rem;
+}
+.card-img-top{
+    width: 100%;
+    height: 30%;
+}
+.X1
+{
+        display: flex;
+        width: 100%;
+    
+}
+
+

@@ -2,6 +2,7 @@ import React from 'react'
 import cover from '../Images /cover.jpeg'
 import profile from '../Images /profile.avif'
 import '../Component /Card.css';
+
 const data = {
     contactData: `
   BEGIN:VCARD
