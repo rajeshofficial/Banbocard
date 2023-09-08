@@ -12,6 +12,9 @@ export default function Form() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [selectedCountry, setSelectedCountry] = useState('');
+  const [profilePic, setProfilePic] = useState(null); // Add these state variables
+  const [coverPic, setCoverPic] = useState(null);  
+  const [additionalInfo, setAdditionalInfo] = useState('');
 
 
   const handleEmailChange = (e) => {
@@ -29,12 +32,65 @@ export default function Form() {
     const enteredConfirmPassword = e.target.value;
     setConfirmPassword(enteredConfirmPassword);
   };
+
+  const handleProfilePicChange = (e) => {
+    setProfilePic(e.target.files[0]);
+  };
+
+  const handleCoverPicChange = (e) => {
+    setCoverPic(e.target.files[0]);
+  };
   const options = countryList().getData();
   
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Add your form submission logic here
+    // You can access form field values like email, password, etc. from their respective state variables
+  };
+  const handleAdditionalInfoChange = (e) => {
+    const text = e.target.value;
+    // Limit the text to 150 characters
+    if (text.length <= 150) {
+      setAdditionalInfo(text);
+    }
+  };
 
   return (
-    <div>
- <form class="row g-3">
+
+    <div className='Main'>
+      <h2>Registration Form<br/></h2>
+      <p>
+        Note that to modify shared data, you must initiate contact with the administrators, incurring an associated editing fee.
+      </p>
+    <form  class="row g-3" onSubmit={handleSubmit}>
+      <div className="mb-3">
+        <label htmlFor="profilePic" className="form-label">
+          Profile Picture:
+        </label>
+        <input
+          type="file"
+          className="form-control"
+          id="profilePic"
+          name="profilePic"
+          accept="image/*"
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="coverPic" className="form-label">
+          Cover Picture:
+        </label>
+        <input
+          type="file"
+          className="form-control"
+          id="coverPic"
+          name="coverPic"
+          accept="image/*"
+        />
+      </div>
+
+
+
  <div class="col-md-6">
     <label for="FirstName" class="form-label">First Name </label>
     <input type="name" class="form-control" id="inputEmail4"/>
@@ -63,11 +119,27 @@ export default function Form() {
   <label for="Contact Number" class="form-label">Contact Number</label>
   <input type="tel" class="form-control" id="inputEmail4" placeholder="Eg +44 7474747474" />
 </div>
+<div className="mb-3">
+          <label htmlFor="additionalInfo" className="form-label">
+            Additional Information (Character limit: 150)
+          </label>
+          <textarea
+            className="form-control"
+            id="additionalInfo"
+            rows="4"
+            value={additionalInfo}
+            onChange={handleAdditionalInfoChange}
+          ></textarea>
+        </div>
 
-
-
-
-
+ <div class="col-md-6">
+    <label for="FirstName" class="form-label">Job Title </label>
+    <input type="name" class="form-control" id="inputEmail4"/>
+  </div>
+  <div class="col-md-6">
+    <label for="LastName" class="form-label">Company </label>
+    <input type="name" class="form-control" id="inputPassword4"/>
+  </div>
 
 
 <div className="col-md-6">
@@ -109,50 +181,6 @@ export default function Form() {
 
 
 
-
-
-
-{/* 
-
-  <div className="col-md-6">
-          <label htmlFor="inputCountry" className="form-label">
-            Country
-          </label>
-          <CountrySelect
-            className="form-control"
-            value={selectedCountry}
-            onChange={(value) => setSelectedCountry(value)}
-          />
-        </div>
-
-        <div className="col-md-6">
-          <label htmlFor="inputState" className="form-label">
-            State
-          </label>
-          <StateSelect
-            className="form-control"
-            country={selectedCountry}
-            value={selectedState}
-            onChange={(value) => setSelectedState(value)}
-          />
-        </div>
-
-        <div className="col-md-6">
-          <label htmlFor="inputCity" className="form-label">
-            City
-          </label>
-          <CitySelect
-            className="form-control"
-            country={selectedCountry}
-            state={selectedState}
-            value={selectedCity}
-            onChange={(value) => setSelectedCity(value)}
-          />
-        </div> */}
-        
-
-
-
   <div className="col-md-6">
           <label htmlFor="inputCountry" className="form-label">
             Country
@@ -181,14 +209,6 @@ export default function Form() {
     <label for="inputZip" class="form-label">PostCode</label>
     <input type="text" class="form-control" id="inputZip"/>
   </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck"/>
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
   <div class="col-md-6">
     <label for="Email" class="form-label">Website</label>
     <input type="text/html" class="form-control" id="inputEmail4"/>
@@ -202,10 +222,27 @@ export default function Form() {
     <input type="text/html" class="form-control" id="inputEmail4"/>
   </div>
   <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck"/>
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck"/>
+      <label class="form-check-label" for="gridCheck">
+        To modify shared data, you must initiate contact with the administrators, incurring an associated editing fee.
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
     <button type="submit" class="btn btn-primary">Sign in</button>
   </div>
 </form>
  
     </div>
+    
   )
 }
